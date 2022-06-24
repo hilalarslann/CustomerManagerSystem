@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CustomerManagerSystem.Abstract;
+using CustomerManagerSystem.Adapters;
+using CustomerManagerSystem.Concrete;
+using CustomerManagerSystem.Entities;
+using System;
 
 namespace CustomerManagerSystem
 {
@@ -6,7 +10,10 @@ namespace CustomerManagerSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BaseCustomerManager customerManager = new StarbucksCustomerManager(new MernisServiceAdapter());
+            customerManager.Save(new Customer { FirstName = "Hilal", LastName = "Arslan", DateOfBirth = new DateTime(1997, 06, 29), NationalityId =  "17840792200"});
+
+            Console.ReadLine();
         }
     }
 }

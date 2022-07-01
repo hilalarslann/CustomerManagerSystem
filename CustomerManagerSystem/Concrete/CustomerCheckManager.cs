@@ -1,8 +1,5 @@
 ﻿using CustomerManagerSystem.Abstract;
 using CustomerManagerSystem.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CustomerManagerSystem.Concrete
 {
@@ -10,7 +7,7 @@ namespace CustomerManagerSystem.Concrete
     {
         public bool CheckIfRealPerson(Customer customer)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }

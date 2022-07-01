@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+
 namespace MernisServiceReference
 {
     
@@ -222,7 +224,12 @@ namespace MernisServiceReference
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
-        
+
+        internal object TCKimlikNoDogrulaAsync(TCKimlikNoDogrulaRequest tCKimlikNoDogrulaRequest)
+        {
+            throw new NotImplementedException();
+        }
+
         public enum EndpointConfiguration
         {
             

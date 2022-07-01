@@ -22,7 +22,7 @@ namespace CustomerManagerSystem.Concrete
             }
             else
             {
-                throw new Exception("Not a valid person");
+                Console.WriteLine("Not a valid person");
             }
         }
     }

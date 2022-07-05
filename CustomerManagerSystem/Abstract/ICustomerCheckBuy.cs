@@ -5,9 +5,8 @@ using System.Text;
 
 namespace CustomerManagerSystem.Abstract
 {
-    public interface ICustomerService
+    public interface ICustomerCheckBuy
     {
-        void Save(Customer customer);
-        void GiveStar(Customer customer);
+        bool CheckBuy(Product product);
     }
 }

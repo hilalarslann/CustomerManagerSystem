@@ -1,7 +1,5 @@
 ﻿using CustomerManagerSystem.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CustomerManagerSystem.Abstract
 {
@@ -9,7 +7,14 @@ namespace CustomerManagerSystem.Abstract
     {
         public virtual void Save(Customer customer)
         {
-            Console.WriteLine("Saved to db" + customer.FirstName);
+            Console.WriteLine("Saved to db " + customer.FirstName);
+        }
+
+        public abstract void Buy(Customer customer, Product product);
+
+        public virtual void GiveStar(Customer customer)
+        {
+            Console.WriteLine("Gived star " + customer.FirstName);
         }
     }
 }

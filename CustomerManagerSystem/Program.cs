@@ -10,10 +10,13 @@ namespace CustomerManagerSystem
     {
         static void Main(string[] args)
         {
-            BaseCustomerManager customerManager = new StarbucksCustomerManager(new MernisServiceAdapter());
+            Customer customer1 = new Customer();
+            customer1.FirstName = "Hilal";
+
+            BaseCustomerManager customerManager = new StarbucksCustomerManager(new MernisServiceAdapter(), new CustomerCheckManager());
             customerManager.Save(new Customer { FirstName = "Hilal", LastName = "Arslan", DateOfBirth = new DateTime(1997, 06, 29), NationalityId = "85486462200" });
 
-
+            customerManager.Buy(customer1, new Product() { Name = "Coffee"});
 
             Console.ReadLine();
         }

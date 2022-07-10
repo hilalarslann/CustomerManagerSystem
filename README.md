@@ -1,4 +1,4 @@
-# CustomerManagerSystem
+# CustomerManagerSimulation
 Bu projede kahve dükkanlarının müşteri yönetimini yapan sistem en temel halde aşağıdaki gereksinimlere göre simule edilmiştir.
 
 Projedeki asıl amaç interface ve abstract yapısını kavramak ve bunu uygulamaktır.

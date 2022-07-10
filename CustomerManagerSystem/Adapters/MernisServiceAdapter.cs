@@ -2,6 +2,7 @@
 using CustomerManagerSystem.Entities;
 using MernisServiceReference;
 using System;
+using static MernisServiceReference.KPSPublicSoapClient;
 
 namespace CustomerManagerSystem.Adapters
 {
@@ -9,12 +10,9 @@ namespace CustomerManagerSystem.Adapters
     {
         public bool CheckIfRealPerson(Customer customer)
         {
-            KPSPublicSoapClient client =
-            new KPSPublicSoapClient(KPSPublicSoapClient.EndpointConfiguration.KPSPublicSoap);
-            var response = client.TCKimlikNoDogrulaAsync(Convert.ToInt64(customer.NationalityId),
-                customer.FirstName.ToUpper(), customer.LastName.ToUpper(), customer.DateOfBirth.Year);
-            var result = response.Result.Body.TCKimlikNoDogrulaResult;
-            return result;
+            KPSPublicSoapClient client = new KPSPublicSoapClient(EndpointConfiguration.KPSPublicSoap);
+            var result = client.TCKimlikNoDogrulaAsync(customer.NationalityId, customer.FirstName.ToUpper(), customer.LastName.ToUpper(), customer.DateYear).GetAwaiter().GetResult();
+            return result.Body.TCKimlikNoDogrulaResult;
         }
     }
 }

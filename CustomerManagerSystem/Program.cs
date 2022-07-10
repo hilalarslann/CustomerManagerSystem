@@ -14,9 +14,9 @@ namespace CustomerManagerSystem
             customer1.FirstName = "Hilal";
 
             BaseCustomerManager customerManager = new StarbucksCustomerManager(new MernisServiceAdapter(), new CustomerCheckManager());
-            customerManager.Save(new Customer { FirstName = "Hilal", LastName = "Arslan", DateOfBirth = new DateTime(1997, 06, 29), NationalityId = "85486462200" });
+            customerManager.Save(new Customer { FirstName = "Hilal", LastName = "Arslan", DateYear = 1997, NationalityId = 17856987458 });
 
-            customerManager.Buy(customer1, new Product() { Name = "Coffee"});
+            customerManager.Buy(customer1, new Product() { Name = "Coffee" });
 
             Console.ReadLine();
         }
